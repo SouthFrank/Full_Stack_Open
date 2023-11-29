@@ -1,4 +1,4 @@
-## 0.4: New note diagram
+## 0.4: New Note Diagram
 
 ```mermaid
 
@@ -20,14 +20,14 @@ participant server
 
 ```
 
-# 0.5: Single page app diagram
+# 0.5: SPA (Single Page Application)
 
 When the user visits the SPA (Single Page Application) version of the notes page it will look essentially the same to them. However, there are some key differences:
 
 - It is comprised of only one HTML page, instead of multiple, and that page is updated by JavaScript executing in the browser.
-- The HTML form-tag is defined differently. It does not contain action or method attribute to define where to send the data.
+- The HTML form-tag is defined differently. It does not contain an action or method attribute to define where to send the data.
 
-# 0.6: New note in Single page app diagram
+# 0.6: New Note SPA Diagram
 
 ```mermaid
 
@@ -40,6 +40,6 @@ participant server
     server-->>browser: Responds with status code 201 created. No further HTTP requests sent.
     deactivate server
 
-    Note right of browser: JavaScript and event handler used to create new note, re-render page, and send new page to server.
+    Note right of browser: The browser uses JavaScript and an event handler to create a new note, re-render the page, and send the new page to server.
 
 ```
