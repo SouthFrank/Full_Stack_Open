@@ -12,7 +12,7 @@ participant server
     deactivate server
 
     browser->>server: Reloads notes page causing 3 more HTTP requests (to fetch css, js, and JSON data)
-    activate server.
+    activate server
     server-->>browser: POST request that creates note and adds it to the array.
     deactivate server
 
