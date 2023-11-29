@@ -6,17 +6,17 @@ sequenceDiagram
 participant browser
 participant server
 
-    browser->>server: POST request to address 'new_note' that sends user input data via a form submit event
+    browser->>server: POST request to address 'new_note' that sends user input data via a form submit event.
     activate server
-    server-->>browser: HTTP Status code 302, server asks browser to do new GET request to the address notes
+    server-->>browser: HTTP Status code 302, server asks browser to do new GET request to the address notes.
     deactivate server
 
-    browser->>server: Reloads notes page causing 3 more HTTP requests (to fetch css, js, and json data)
-    activate server
-    server-->>browser: POST request that creates note and adds it to the array
+    browser->>server: Reloads notes page causing 3 more HTTP requests (to fetch css, js, and JSON data)
+    activate server.
+    server-->>browser: POST request that creates note and adds it to the array.
     deactivate server
 
-    Note right of browser: The browser renders an updated version of notes
+    Note right of browser: The browser renders an updated version of notes.
 
 ```
 
@@ -35,16 +35,11 @@ sequenceDiagram
 participant browser
 participant server
 
-    browser->>server: POST request to address 'new_note' that sends user input data via a form submit event
+    browser->>server: POST request to address 'new_note_spa' that contains note as JSON data.
     activate server
-    server-->>browser: HTTP Status code 302, server asks browser to do new GET request to the address notes
+    server-->>browser: Responds with status code 201 created. No further HTTP requests sent.
     deactivate server
 
-    browser->>server: Reloads notes page causing 3 more HTTP requests (to fetch css, js, and json data)
-    activate server
-    server-->>browser: POST request that creates note and adds it to the array
-    deactivate server
-
-    Note right of browser: The browser renders an updated version of notes
+    Note right of browser: JavaScript and event handler used to create new note, re-render page, and send new page to server.
 
 ```
