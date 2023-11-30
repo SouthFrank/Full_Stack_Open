@@ -1,8 +1,9 @@
-# React + Vite
+# Part 1 Introduction to React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Exercise 1.1
+- Initialize a new React App with Vite
+- Modify main.jsx and App.jsx to match the starter code provide
+- Remove both .css files and directory assets
+- Refactor the code to consists of multiple components, that take props from the App component, which contains all of the data
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Status: *completed*
