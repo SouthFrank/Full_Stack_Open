@@ -13,3 +13,15 @@ Status: *completed*
 - Instead, it only renders three *Part* components of which each renders the name and number of exercises of one part.
 
 Status: *completed*
+
+## Exercise 1.3
+- Modify the variable definitions of the *App* component, and place data in objects. 
+- Refactor the application so that it still works.
+
+Status: *completed*
+
+## Exercise 1.4
+- Place the objects into an array.
+- Modify the variable definitions of *App* and modify the other parts of the application accordingly.
+
+Status: *completed*
