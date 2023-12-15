@@ -25,3 +25,8 @@ Status: *completed*
 - Modify the variable definitions of *App* and modify the other parts of the application accordingly.
 
 Status: *completed*
+
+## Exercise 1.5
+- Change the course and its parts into a single JavaScript object. Fix everything that breaks.
+
+Status: *completed*
