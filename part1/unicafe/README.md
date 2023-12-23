@@ -6,3 +6,8 @@ This project contains Exercises 1.6 to 1.14. Exercises 1.1 to 1.5 can found in t
 - The application must display the total number of collected feedback for each category. 
 
 Status: *completed*
+
+## Exercise 1.7
+- Expand your application so that it shows more satistics about the gathered feedback: the total number of collected feedback, the average score, and the percentage of positive feedback.
+
+Status: *completed*
