@@ -11,3 +11,8 @@ Status: *completed*
 - Expand your application so that it shows more satistics about the gathered feedback: the total number of collected feedback, the average score, and the percentage of positive feedback.
 
 Status: *completed*
+
+## Exercise 1.8
+- Refactor your application so that displaying the statistics is extracted into its own Statistics component. The state of the application should remain in the App root component.
+
+Status: *completed*
