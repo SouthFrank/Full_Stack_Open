@@ -28,3 +28,8 @@ Status: *completed*
 2. StatisticLine for displaying a single statistic, e.g. the average score.
 
 Status: *completed*
+
+## Exercise 1.11
+- Display the statistic in an HTML table.
+
+Status: *completed*
