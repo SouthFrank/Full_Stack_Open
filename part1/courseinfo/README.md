@@ -1,4 +1,7 @@
-# Part 1 Introduction to React
+# Part 1 Introduction to React - Course Info
+- This project contains Exercises 1.1 to 1.5. 
+- Exercises 1.6 to 1.11 can be found in the folder within the 'part1' section of this repository named 'unicafe'. 
+- Exercises 1.12 to 1.14 can be found in the folder within the 'part1' section of this repository named 'anecdotes'.
 
 ## Exercise 1.1
 - Initialize a new React App with Vite.
