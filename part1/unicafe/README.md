@@ -16,3 +16,6 @@ Status: *completed*
 - Refactor your application so that displaying the statistics is extracted into its own Statistics component. The state of the application should remain in the App root component.
 
 Status: *completed*
+
+## Exercise 1.9
+- Change your application to display statistics only once feedback has been gathered.
