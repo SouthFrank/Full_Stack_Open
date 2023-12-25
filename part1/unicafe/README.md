@@ -19,3 +19,12 @@ Status: *completed*
 
 ## Exercise 1.9
 - Change your application to display statistics only once feedback has been gathered.
+
+Status: *completed*
+
+## Exercise 1.10
+- Continue refactoring the application. Extract the following two components:
+1. Button for handling the functionality of each feedback submission button.
+2. StatisticLine for displaying a single statistic, e.g. the average score.
+
+Status: *completed*
