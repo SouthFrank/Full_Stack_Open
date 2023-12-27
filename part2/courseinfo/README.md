@@ -18,3 +18,22 @@ Status: _completed_
 - The array method 'reduce' was used to achieve this.
 
 Status: _completed_
+
+## Exercise 2.3
+
+- If you haven't done so already, calculate the sum of exercises with the array method 'reduce'.
+- The 'reduce' array method was already implemented in the previous exercise.
+
+Status: _completed_
+
+## Exercise 2.4
+
+- Extend our application to allow for an arbitrary number of courses.
+
+Status: _completed_
+
+## Exercises 2.5
+
+- Move the Course component and its sub-components into its own component file, to be imported into the App.
+
+Status: _completed_
