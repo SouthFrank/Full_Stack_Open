@@ -30,3 +30,8 @@ Status: *completed*
 - Changed what is displayed in the Contact List.
 
 Status: *completed*
+
+## Exercise 2.10
+
+- Refactor the application by extracting suitable parts into new components.
+- Maintain the application's state and all event handlers in the App root component.
