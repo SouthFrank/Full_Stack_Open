@@ -35,3 +35,6 @@ Status: *completed*
 
 - Refactor the application by extracting suitable parts into new components.
 - Maintain the application's state and all event handlers in the App root component.
+
+
+Status: *completed*
