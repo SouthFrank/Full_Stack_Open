@@ -35,24 +35,20 @@ const ContactForm = ({
   );
 };
 
-const Numbers = ({ filteredList }) => {
+const Numbers = ({ filteredList, deletePerson }) => {
   console.log(filteredList);
+
   return (
     <div>
       <ul>
         {filteredList.map((person) => (
-          <Person key={person.id} name={person.name} number={person.number} />
+          <li>
+            {person.name} - {person.number} 
+            <button onClick={() => deletePerson(person.id)}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
-  );
-};
-
-const Person = ({ name, number }) => {
-  return (
-    <li>
-      {name} - {number}
-    </li>
   );
 };
 
@@ -85,13 +81,25 @@ const App = () => {
 
       contactService.addContact(nameObject).then((newContact) => {
         setPersons(persons.concat(newContact));
-        setNewName("");
-        setNewNumber("");
+        setNewName("")
+        setNewNumber("")
       });
     } else {
       alert(`The name '${newName}' is already in use. Please change.`);
     }
   };
+
+  const deletePerson = (id) => {
+    const confirmed = window.confirm('Are you sure you want to delete this contact?')
+
+    if(confirmed){
+      contactService.deleteContact(id).then(response => console.log('Deleted', response.data))
+      setNewName("")
+      setNewNumber("")
+    } else {
+      console.log('Deletion has been cancelled by user.')
+    } 
+  }
 
   //Event Handler Functions
   const handleNameChange = (event) => setNewName(event.target.value);
@@ -115,7 +123,7 @@ const App = () => {
       />
 
       <h2>Contact List</h2>
-      <Numbers filteredList={filteredList} />
+      <Numbers filteredList= {filteredList} deletePerson = {deletePerson} />
     </div>
   );
 };
