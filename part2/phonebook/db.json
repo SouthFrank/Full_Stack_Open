@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "persons":[
       { 
         "name": "Arto Hellas", 
@@ -22,3 +23,43 @@
       }
     ]
   }
+=======
+  "persons": [
+    {
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": "1"
+    },
+    {
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": "2"
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": "3"
+    },
+    {
+      "name": "Mary Poppendieck",
+      "number": "39-23-6423122",
+      "id": "4"
+    },
+    {
+      "id": 5,
+      "name": "Frank",
+      "number": "6543281"
+    },
+    {
+      "id": 6,
+      "name": "okay",
+      "number": "3435"
+    },
+    {
+      "id": 7,
+      "name": "bonkers",
+      "number": "3868346382"
+    }
+  ]
+}
+>>>>>>> 421ea43147fbf25985e2c211877a1412fafbba96
