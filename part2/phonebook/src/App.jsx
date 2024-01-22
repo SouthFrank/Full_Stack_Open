@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import './App.css'
-=======
-import { useState, useEffect } from "react";
-import axios from "axios";
-import contactService from "./services/contacts";
-import "./App.css";
->>>>>>> 421ea43147fbf25985e2c211877a1412fafbba96
+import contactService from "./services/contacts"
+
 
 const Filter = ({ handleFilter }) => {
   return (
@@ -63,22 +57,6 @@ const Person = ({ name, number }) => {
 };
 
 const App = () => {
-<<<<<<< HEAD
-  const [persons, setPersons] = useState([]) 
-  const [newName, setNewName] = useState('Please enter your name')
-  const [newNumber, setNewNumber] = useState('Please enter your number')
-  const [filterValue, setFilterValue] = useState()
-
-  useEffect(() => {
-    axios
-      .get('http://localhost:3000/persons')
-      .then(response => {
-        setPersons(response.data)
-      })
-  }, [])
-
-  const filteredList = !filterValue ? persons : persons.filter(person => person.name.toLowerCase().includes(filterValue.toLowerCase()))
-=======
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("Please enter your name");
   const [newNumber, setNewNumber] = useState("Please enter your number");
@@ -93,7 +71,6 @@ const App = () => {
     : persons.filter((person) =>
         person.name.toLowerCase().includes(filterValue.toLowerCase())
       );
->>>>>>> 421ea43147fbf25985e2c211877a1412fafbba96
 
   const addPerson = (event) => {
     event.preventDefault();
@@ -118,9 +95,7 @@ const App = () => {
 
   //Event Handler Functions
   const handleNameChange = (event) => setNewName(event.target.value);
-
   const handleNumberChange = (event) => setNewNumber(event.target.value);
-
   const handleFilterChange = (event) => {
     setFilterValue(event.target.value);
   };
