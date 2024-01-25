@@ -1,24 +1,3 @@
 {
-  "persons": [
-    {
-      "name": "Arto Hellas",
-      "number": "040-123456",
-      "id": 1
-    },
-    {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
-      "id": 3
-    },
-    {
-      "name": "Frank South",
-      "number": "2239228121",
-      "id": 5
-    },
-    {
-      "name": "Red",
-      "number": "23734",
-      "id": 4
-    }
-  ]
+  "persons": []
 }

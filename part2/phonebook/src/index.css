@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    width: 100%;
+    background-color: cadetblue;
+    box-sizing: border-box;
+    font-family: 'Poppins'
+}
+
+.container {
+    margin: 60px auto 0 auto;
+    width: 400px;
+    background-color: white;
+    padding: 20px;  
+    border-radius: 10px;
+}
+
+.addContact {
+    height: 115px;
+    padding: 0;
+}
+.contactForm {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.contactButton {
+    background-color: green;
+    color: whitesmoke;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    height: 50px;
+    padding: 5px;
+}
+.mainHead {
+    text-align: center;
+}
+
+.success {
+    /* box-sizing: none; */
+    border: 2px solid green;
+    border-radius: 5px;
+    background-color: rgb(243, 240, 240);
+    padding: 0 5px;
+    position: absolute;
+}
+
+.fail {
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(243, 240, 240);
+    padding: 0 5px;
+    position: absolute;
+}
+
+.contactList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.contactList > h2 {
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.contactItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.deleteButton {
+    width: 100px;
+    background-color: rgb(160, 18, 18);
+    color: whitesmoke;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}

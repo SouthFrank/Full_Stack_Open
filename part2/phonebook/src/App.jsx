@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import contactService from "./services/contacts"
 
 
@@ -19,16 +18,17 @@ const ContactForm = ({
   newNumber,
 }) => {
   return (
-    <div>
-      <form onSubmit={addPerson}>
+    <div className='addContact'>
+      <h2>Add a Contact</h2>
+      <form className='contactForm' onSubmit={addPerson}>
         <div>
-          Name: <input value={newName} onChange={handleNameChange} />
+          Name: <input value={newName} onChange={handleNameChange} placeholder='Enter the Name'/>
         </div>
         <div>
-          Number: <input value={newNumber} onChange={handleNumberChange} />
+          Number: <input value={newNumber} onChange={handleNumberChange} placeholder='Enter the Phone Number'/>
         </div>
         <div>
-          <button type="submit">add</button>
+          <button className='contactButton' type="submit">Add Contact</button>
         </div>
       </form>
     </div>
@@ -39,12 +39,13 @@ const Numbers = ({ filteredList, deletePerson }) => {
   console.log(filteredList);
 
   return (
-    <div>
+    <div className='contactList'>
+      <h2>Contact List</h2>
       <ul>
         {filteredList.map((person) => (
-          <li>
-            {person.name} - {person.number} 
-            <button onClick={() => deletePerson(person.id)}>Delete</button>
+          <li className='contactItem'>
+            <span>{person.name} - {person.number}</span> 
+            <button className='deleteButton' onClick={() => deletePerson(person.id)}>Delete</button>
           </li>
         ))}
       </ul>
@@ -52,11 +53,37 @@ const Numbers = ({ filteredList, deletePerson }) => {
   );
 };
 
+const Notifications = ({message}) => {
+  if(message === null) {
+    return null
+  }
+    
+  return (
+    <div className='success'>
+      {message}
+    </div>
+  )
+}
+
+const ErrorMessage = ({message}) => {
+  if(message === null) {
+    return null
+  }
+
+  return (
+    <div className='fail'>
+      {message}
+    </div>
+  )
+}
+
 const App = () => {
   const [persons, setPersons] = useState([]);
-  const [newName, setNewName] = useState("Please enter your name");
-  const [newNumber, setNewNumber] = useState("Please enter your number");
+  const [newName, setNewName] = useState();
+  const [newNumber, setNewNumber] = useState();
   const [filterValue, setFilterValue] = useState();
+  const [successMessage, setSuccessMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     contactService.getContacts().then((contacts) => setPersons(contacts));
@@ -77,25 +104,52 @@ const App = () => {
         name: newName,
         number: newNumber,
         id: persons.length + 1,
-      };
+      }
 
       contactService.addContact(nameObject).then((newContact) => {
         setPersons(persons.concat(newContact));
         setNewName("")
         setNewNumber("")
-      });
+      })
+      .then(success => {
+        setSuccessMessage(`${nameObject.name} has been added to your contacts`)
+        setTimeout(() => {
+          setSuccessMessage(null)
+        }, 6000)
+      })
     } else {
-      alert(`The name '${newName}' is already in use. Please change.`);
+
+      const confirmed = window.confirm(`${newName} already exists in your contacts. Do you wish to change their number?`)
+      
+      if(confirmed){
+        const newPersons = [...persons]
+        const contact = newPersons.find(person => person.name === newName)
+        const contactId = contact.id;
+        const changedContact = { ...contact, number: newNumber }
+
+        contactService.updateContact(contactId, changedContact)
+        .then(returnedContact => {
+          setPersons(newPersons.map(person => person.id !== id ? person : returnedContact))
+        })
+        .catch(error => {
+          setErrorMessage(`This person has already been deleted.`)
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 6000)
+        })
+      }
     }
   };
 
   const deletePerson = (id) => {
     const confirmed = window.confirm('Are you sure you want to delete this contact?')
-
+    
     if(confirmed){
-      contactService.deleteContact(id).then(response => console.log('Deleted', response.data))
-      setNewName("")
-      setNewNumber("")
+      contactService.deleteContact(id).then(response => {
+        console.log('Deleted', response.data)
+        setState()
+      })
+    
     } else {
       console.log('Deletion has been cancelled by user.')
     } 
@@ -109,11 +163,11 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className='container'>
+      <h1 className='mainHead'>Phonebook</h1>
       <Filter handleFilter={handleFilterChange} />
 
-      <h2>Add a Contact</h2>
+      
       <ContactForm
         addPerson={addPerson}
         handleNameChange={handleNameChange}
@@ -122,8 +176,9 @@ const App = () => {
         newNumber={newNumber}
       />
 
-      <h2>Contact List</h2>
-      <Numbers filteredList= {filteredList} deletePerson = {deletePerson} />
+      <Notifications message={successMessage}/>
+      <ErrorMessage message={errorMessage}/>
+      <Numbers filteredList= {filteredList} deletePerson = {deletePerson}/>
     </div>
   );
 };
